@@ -26,3 +26,7 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+
+.mode-container{
+  padding-left: 40px;
+}
