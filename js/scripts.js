@@ -11,6 +11,28 @@ const buttonExample2Element = document.getElementById('button-example2');
 const example1Container = document.getElementById('example1');
 const example2Container = document.getElementById('example2');
 
+const supplies = [
+  'a medkit',
+  'a flashlight with half battery',
+  'some canned food',
+  'a rusty knife',
+  'a bottle of clean water',
+  'a pack of bullets',
+  'a piece of cloth (could be used as a bandage)',
+  'a lighter',
+  'an empty bottle (might be useful)',
+  'some herbs (smell weird)',
+  'a broken walkie-talkie',
+  'a protein bar, still edible',
+  'a map with strange markings'
+  ];
+  
+  const failureTexts = [
+  'Nothing but silence and dust. Abby returned empty-handed.',
+  'No supplies today. The world remains unforgiving.',
+  "She searched everywhere, but luck wasn't on her side."
+  ];
+
 //FUNCIONES
 
 //Ejemplo 1
