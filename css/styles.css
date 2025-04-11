@@ -29,4 +29,7 @@ body {
 
 .mode-container{
   padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
