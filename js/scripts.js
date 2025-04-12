@@ -125,6 +125,7 @@ const buttonExample4Element = document.getElementById('button-example4');
 const trafficZoneElement = document.getElementById('traffic-zone');
 
 const cars = ['🚗', '🚕', '🚙'];
+let carCounter = []; //contador de coches
 
 //Funciones
 
@@ -137,13 +138,22 @@ const dodgeCar = () => {
   traffic.textContent = randomCar;
   trafficZoneElement.append(traffic);
 
-  const repetitionsAllowed = 3; //cantidad de coches que se pueden repetir
+  //registro de coches
+  carCounter.push(randomCar);
+  if (carCounter.length > 3) {
+    carCounter.shift(); // permite que el array tenga solo los 3 ultimos coches
+  }
 
-  if (traffic.value === repetitionsAllowed) {
-    const errorMessage = document.createElement('p');
-    errorMessage.textContent = `Bego, please be careful! This car model ${randomCar} is stalking you! 🚨`;
-    trafficZoneElement.append(errorMessage);
-  } ///no sirveeeee
+  //cuando el array tiene 3 coches y TODOS sean iguales al primero del array
+  //me perdi un poco en la formulacion del .every con flecha 
+  if (carCounter.length === 3 && carCounter.every(car => car === carCounter[0])) {
+    const warning = document.createElement('p');
+    warning.textContent = `Bego, please be careful! This car model ${carCounter[0]} is stalking you! 🚨`;
+    trafficZoneElement.append(warning);
+    carCounter=[]; //reinicio el contador de coches
+  }
+  
+
 }
 
 //EVENTOS
