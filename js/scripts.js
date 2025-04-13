@@ -144,6 +144,13 @@ const dodgeCar = () => {
     carCounter.shift(); // permite que el array tenga solo los 3 ultimos coches
   }
 
+ 
+    let existingWarning = document.querySelector('p'); //busco si ya existe un p de warning
+    if (existingWarning) {
+      existingWarning.remove(); //lo elimino si existe
+    }
+    
+
   //cuando el array tiene 3 coches y TODOS sean iguales al primero del array
   //me perdi un poco en la formulacion del .every con flecha 
   if (carCounter.length === 3 && carCounter.every(car => car === carCounter[0])) {
@@ -153,7 +160,6 @@ const dodgeCar = () => {
     carCounter=[]; //reinicio el contador de coches
   }
   
-
 }
 
 //EVENTOS
